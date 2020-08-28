@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.3.3.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.morebread.api</groupId>
 	<artifactId>morebread</artifactId>
@@ -25,7 +25,6 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.21</version>
 		</dependency>
 
 		<dependency>
@@ -57,6 +56,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
 	</dependencies>
 
 	<build>
@@ -74,6 +78,5 @@
 					</plugin>
 				</plugins>
 			</pluginManagement>
-	</build>
-	
+	</build>	
 </project>
