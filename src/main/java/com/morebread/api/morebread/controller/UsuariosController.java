@@ -5,6 +5,7 @@ import com.morebread.api.morebread.model.UsuarioRepository;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,12 +20,12 @@ public class UsuariosController {
 
   @GetMapping(path = "/usuarios")
   public List<Usuario> listaUsuarios() {
-
     return repository.findAll();
   }
 
-  @PostMapping(path = "/usuarios", produces = { "application/json" })
-  public Long criaUsuario(Usuario usuario) {
+  @PostMapping(path = "/usuarios", consumes = { "application/json;" }, produces = { "application/json;" })
+  public Long criaUsuario(@RequestBody Usuario usuario) {
+
     Usuario retorno = repository.save(usuario);
 
     return retorno.getId();
